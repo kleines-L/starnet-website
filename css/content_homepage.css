@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: white;
+}
+
+.background {
+    height: 100vh;
+    background: url('../images/background.png') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    max-width: 50%;
+    height: auto;
+}
+
+.info {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 20px;
+    flex-wrap: wrap;
+}
+
+.info-box {
+    width: 200px;
+    text-align: center;
+    margin: 20px;
+}
+
+.info-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.info-box p {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 16px;
+}

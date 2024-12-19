@@ -7,51 +7,81 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/content_homepage.css">
+    <link rel="stylesheet" href="css/backgrounds.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Transparent Header -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="#section1">Home</a></li>
-                <li><a href="#section2">About</a></li>
-                <li><a href="#section3">Services</a></li>
-                <li><a href="#section4">Contact</a></li>
-            </ul>
-        </nav>
+        <a href="./index.html">
+            <img src="images/logo.png" alt="logo" class="logo">
+        </a>
+        <div class="nav-links">
+            <a class="h-text" href="./index.html">home</a>
+            <a class="h-text" href="./about-us.html">about us</a>
+            <a class="h-text" href="http://discord.gg/vssdXtrqUY">discord</a>
+            <a class="h-text" href="http://starnet-cb.tebex.io">shop</a>
+        </div>
     </header>
-
-    <!-- Background Section -->
-    <section class="background">
-        <img src="images/title.png" alt="Title Image" class="title">
-    </section>
-
-    <!-- White Section with Images -->
-    <section class="info">
-        <div class="info-box">
-            <img src="images/news1.png" alt="News 1">
-            <p>Server News 1</p>
+    <main>
+        <!-- Main content goes here -->
+        <div class="image-container">
+            <img src="images/background.png" alt="background image" class="cropped-image">
+            <div class="title-container">
+                <img src="images/starnet-skyblock.png" alt="title image" class="title-image" onclick="window.location.href='./about-us.html';">
+                <p class="subtitle">The best skyblock experience on mcbe</p>
+                <button class="btn-donate" onclick="scrollToJoin()">Join Now</button>
+            </div>
         </div>
-        <div class="info-box">
-            <img src="images/news2.png" alt="News 2">
-            <p>Server News 2</p>
+    
+        <div class="image-container">
+            <img src="images/news1.png" alt="news1 image" class="cropped-image">
+            <div class="how-to-join-overlay">
+                <section class="how-to-join" id="how-to-join">
+                    <h2>How to Join the server</h2>
+                    <div class="steps">
+                        <div class="step">
+                            <img src="images/step1.png" alt="Step 1" class="step-image">
+                            <p>1. Click 'Add Friend'</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/step2.2.png" alt="Step 2" class="step-image">
+                            <p>2. Add 'starnetmcbe'</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/step3.png" alt="Step 3" class="step-image">
+                            <p>3. Join our server</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
-        <div class="info-box">
-            <img src="images/news3.png" alt="News 3">
-            <p>Server News 3</p>
+    
+        <div class="image-container">
+            <img src="images/news3.png" alt="news3 image" class="cropped-image">
         </div>
-        <div class="info-box">
-            <img src="images/news4.png" alt="News 4">
-            <p>Server News 4</p>
-        </div>
-    </section>
-
-    <!-- Transparent Footer -->
+    </main>
     <footer>
-        <p>© 2024 Your Website. All rights reserved.</p>
+        <p>&copy; 2024 Starnet-mcbe</p>
     </footer>
+
+    <script>
+        function scrollToJoin() {
+            const element = document.getElementById('how-to-join');
+            const offset = -200; // Adjust this value as needed
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = element.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition + offset;
+    
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
 </body>
 </html>

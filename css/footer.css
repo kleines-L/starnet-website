@@ -1,10 +1,19 @@
 footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+    background-color: rgba(241, 241, 241, 0.281);
+    padding: 20px;
     text-align: center;
-    padding: 10px 0;
-    font-family: 'Poppins', sans-serif;
+    color: rgb(255, 255, 255);
+    font-family: poppins;
+    position: relative; /* Change from fixed to relative */
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    margin-top: -10vh; /* Overlap with the last image */
+    backdrop-filter: blur(5px); /* Apply blur effect */
+    
+}
+
+footer p {
+    backdrop-filter: none; /* Exclude text from blur effect */
 }

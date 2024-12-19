@@ -1,32 +1,58 @@
 header {
+  background-color: rgba(241, 241, 241, 0.151);
+  padding: 20px;
+  color: rgb(255, 255, 255);
+  font-family: poppins;
   position: fixed;
-  top: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px 20px;
-  font-family: 'Poppins', sans-serif;
-  z-index: 1000;
-}
-
-nav ul {
-  list-style-type: none;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  backdrop-filter: blur(5px); /* Apply blur effect */
   display: flex;
-  justify-content: flex-end;
-  margin: 0;
-  padding: 0;
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space out items horizontally */
 }
 
-nav ul li {
-  margin-left: 20px;
+.logo {
+  height: 40px;
+  padding-left: 1.8rem;
+  transition: transform 0.3s; /* Smooth transition for hover effect */
+  display: flex;
+  align-items: center; /* Center logo vertically */
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); /* Add shadow to logo */
 }
 
-nav ul li a {
+.logo:hover {
+  transform: scale(1.08); /* Make the logo slightly bigger on hover */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Push the nav links to the right */
+}
+
+.h-text {
+  font-size: 20px;
+  backdrop-filter: none; /* Exclude text from blur effect */
+  padding-right: 50px;
+  transition: all 0.5s;
   text-decoration: none;
-  color: #000;
-  font-weight: 500;
+  color: aliceblue;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
 }
 
-nav a {
-  padding: 5px 10px;
-  padding-right: 100px;
+.h-text:hover {
+  color: #ffef95;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.h-text:nth-child(2) {
+  padding-right: 50px; /* Ensure "about us" is in the same column */
+}
+
+.h-text:nth-child(4) {
+  padding-right: 100px; /* Add padding to the right of the "shop" text */
 }

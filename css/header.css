@@ -80,11 +80,15 @@ header {
 .shop {
   margin-right: 1rem;
   background: #ffffff25;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
 }
 
 .shop img,
 .discord img {
   height: 2rem;
   width: 2rem;
+}
+
+.shop:hover {
+  
 }

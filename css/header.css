@@ -36,7 +36,7 @@ header {
 .h-text {
   font-size: 20px;
   backdrop-filter: none; /* Exclude text from blur effect */
-  padding-right: 50px;
+  padding-right: 30px;
   transition: all 0.5s;
   text-decoration: none;
   color: aliceblue;
@@ -50,7 +50,7 @@ header {
 }
 
 .h-text:nth-child(2) {
-  padding-right: 50px; /* Ensure "about us" is in the same column */
+  padding-right: 30px; /* Ensure "about us" is in the same column */
 }
 
 .h-text:nth-child(4) {
@@ -78,7 +78,7 @@ header {
 }
 
 .shop {
-  margin-right: 1rem;
+  margin-right: 1.5rem;
   background: #ffffff25;
   backdrop-filter: blur(10px);
 }
@@ -89,6 +89,6 @@ header {
   width: 2rem;
 }
 
-.shop:hover {
-  
+.shop:hover, .discord:hover {
+  transform: scale(1.05); /* Make the logo slightly bigger on hover */
 }

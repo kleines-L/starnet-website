@@ -166,14 +166,43 @@ button:active:after {
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(255, 255, 255, 0.192);
-  padding: 20px;
+  padding: 20px 20px 20px 20px;
   border-radius: 20px;
   backdrop-filter: blur(6px); /* Add this line to blur the background */
+}
+
+.why-join-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.192);
+  padding: 20px 20px 20px 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px); /* Add this line to blur the background */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 80%; /* Increase the width */
+  height: 60%; /* Decrease the height */
 }
 
 .why-join,
 .how-to-join {
   text-align: center;
+}
+
+.why-join {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.server-info {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.192);
+  padding: 2rem 2rem 2rem 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
 }
 
 .steps {

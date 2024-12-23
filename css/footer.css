@@ -4,12 +4,12 @@ footer {
   text-align: center;
   color: rgb(255, 255, 255);
   font-family: poppins;
-  position: relative; /* Change from fixed to relative */
+  position: relative; /* Ensure footer is positioned relative */
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 10;
-  margin-top: -18.5vh; /* Overlap with the last image */
+  margin-top: -6rem; /* Negative margin to overlap with the last image */
   backdrop-filter: blur(5px); /* Apply blur effect */
 }
 

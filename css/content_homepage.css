@@ -3,7 +3,7 @@ html, body {
   padding: 0;
   background-color: #ffffff;
   overflow-x: hidden;
-  padding-bottom: -10vh;
+  overflow-y: auto; /* Ensure vertical scrolling is enabled */
 }
 
 main {
@@ -23,15 +23,12 @@ main {
 }
 
 .cropped-image {
-  width: calc(100% + 10px); /* Extend the width slightly */
-  height: auto;
+  width: 100%; /* Extend the width slightly */
+  height: 80vh; /* Adjust the height as needed */
   object-fit: cover;
   object-position: center;
-  height: 80vh; /* Adjust the height as needed */
   filter: blur(5px); /* Apply blur effect */
   background-color: #222; /* Set background color to match the main color of your images */
-  margin-left: -5px; /* Adjust the left margin */
-  margin-right: -5px; /* Adjust the right margin */
 }
 
 .image-container:first-child .cropped-image {
@@ -50,12 +47,12 @@ main {
 
 .image-container:nth-child(3) {
   margin-top: -3vh; /* Reduce the margin-top for the third image */
-  margin-bottom: 5rem; /* Remove the margin-bottom for the last image */
+  margin-bottom: 0; /* Remove the margin-bottom for the last image */
 }
 
 .image-container:nth-child(3) .cropped-image {
   height: 100vh;
-  margin-bottom: -2rem; /* Move the last image down to overlap with the footer */
+  margin-bottom: -50px; /* Negative margin to overlap with the footer */
   clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%); /* Invert the top edge and keep the bottom edge straight */
 }
 
@@ -70,6 +67,7 @@ main {
 .title-image {
   transition: transform 0.3s ease;
   height: 30vh;
+  filter: drop-shadow(0 0 10px #000);
 }
 
 .title-image:hover {

@@ -1,19 +1,18 @@
 footer {
-    background-color: rgba(241, 241, 241, 0.281);
-    padding: 20px;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    font-family: poppins;
-    position: relative; /* Change from fixed to relative */
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    margin-top: -10vh; /* Overlap with the last image */
-    backdrop-filter: blur(5px); /* Apply blur effect */
-    
+  background-color: rgba(241, 241, 241, 0.281);
+  padding: 20px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: poppins;
+  position: relative; /* Change from fixed to relative */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin-top: -18.5vh; /* Overlap with the last image */
+  backdrop-filter: blur(5px); /* Apply blur effect */
 }
 
 footer p {
-    backdrop-filter: none; /* Exclude text from blur effect */
+  backdrop-filter: none; /* Exclude text from blur effect */
 }

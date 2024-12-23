@@ -1,0 +1,50 @@
+
+<script>
+    // Lese die URL-Parameter
+    const params = new URLSearchParams(window.location.search);
+    const server = params.get('server');
+    const type = params.get('type');
+
+    if (server) {
+      const statusDiv = document.getElementById('status');
+      const apiUrl = `https://api.mcstatus.io/v2/status/${encodeURIComponent(type)}/${encodeURIComponent(server)}`; // API-URL
+
+      // API-Abfrage
+      fetch(apiUrl)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP-Fehler: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          // Zeige die Daten an
+          
+          const onlineStatus = data.online ? "Online" : "Offline";
+          const circle = data.online ? "on" : "off";
+          const port = data.port;
+          const ip = data.ip_address;
+          const motd = data.motd?.clean || "No MOTD";
+          const onplayers = data.players?.online || 0;
+          const maxplayers = data.players?.max || 0;
+          const version = data.version?.name || "Unknown";
+          const protocol = data.version?.protocol || "Undefined";
+          statusDiv.innerHTML = `
+            <div class="card"><img src="icons/server.svg"><div><b>Server</b><p>${server}</p></div></div>
+            <div class="card"><img src="icons/${circle}circle.svg"><div><b>Status</b><p>${onlineStatus}</p></div></div>
+            <div class="card"><img src="icons/wifi.svg"><div><b>IP</b><p>${ip}</p></div></div>
+            <div class="card"><img src="icons/ethernet.svg"><div><b>Port</b><p>${port}</p></div></div>
+            <div class="card"><img src="icons/text.svg"><div><b>MOTD</b><p>${motd}</p></div></div>
+            <div class="card"><img src="icons/user-online.svg"><div><b>Players Online</b><p>${onplayers}</p></div></div>
+            <div class="card"><img src="icons/user-gear.svg"><div><b>Max Players</b><p>${maxplayers}</p></div></div>
+            <div class="card"><img src="icons/version.svg"><div><b>Version</b><p>${version}</p></div></div>
+            <div class="card"><img src="icons/protocol.svg"><div><b>Protocol</b><p>${protocol}</p></div></div>
+          `;
+        })
+        .catch(error => {
+          statusDiv.innerHTML = `<p>Fehler: ${error.message}</p>`;
+        });
+    } else {
+      document.getElementById('status').innerHTML = `<p>Kein Server angegeben!</p>`;
+    }
+  </script>

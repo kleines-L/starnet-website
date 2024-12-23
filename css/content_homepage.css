@@ -1,212 +1,229 @@
 html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    overflow-x: hidden;
-    padding-bottom: -10vh;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  padding-bottom: -10vh;
 }
 
 main {
-    margin-top: 0; /* Remove the margin-top */
-    padding: 0; /* Remove padding at the bottom */
+  margin-top: 0; /* Remove the margin-top */
+  padding: 0; /* Remove padding at the bottom */
 }
 
 .image-container {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 0; /* Remove the white spot by setting margin-bottom to 0 */
-    position: relative; /* Add this to position the title container */
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 0; /* Remove the white spot by setting margin-bottom to 0 */
+  position: relative; /* Add this to position the title container */
 }
 
 .image-container:not(:first-child) {
-    margin-bottom: 5px; /* Reduce the margin-bottom for all images except the first one */
+  margin-bottom: 5px; /* Reduce the margin-bottom for all images except the first one */
 }
 
 .cropped-image {
-    width: calc(100% + 10px); /* Extend the width slightly */
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-    height: 80vh; /* Adjust the height as needed */
-    filter: blur(5px); /* Apply blur effect */
-    background-color: #ff0000; /* Set background color to match the main color of your images */
-    margin-left: -5px; /* Adjust the left margin */
-    margin-right: -5px; /* Adjust the right margin */
+  width: calc(100% + 10px); /* Extend the width slightly */
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  height: 80vh; /* Adjust the height as needed */
+  filter: blur(5px); /* Apply blur effect */
+  background-color: #222; /* Set background color to match the main color of your images */
+  margin-left: -5px; /* Adjust the left margin */
+  margin-right: -5px; /* Adjust the right margin */
 }
 
 .image-container:first-child .cropped-image {
-    margin-top: -80px; /* Move the first image up to overlap with the header */
-    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%); /* Slant the bottom edge */
+  margin-top: -80px; /* Move the first image up to overlap with the header */
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%); /* Slant the bottom edge */
 }
 
 .image-container:nth-child(2) {
-    margin-top: -3vh; /* Reduce the margin-top for the second image */
-    margin-bottom: -3vh; /* Reduce the margin-bottom for the second image */
+  margin-top: -3vh; /* Reduce the margin-top for the second image */
+  margin-bottom: -3vh; /* Reduce the margin-bottom for the second image */
 }
 
 .image-container:nth-child(2) .cropped-image {
-    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%); /* Slant the top edge and invert the bottom edge */
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%); /* Slant the top edge and invert the bottom edge */
 }
 
 .image-container:nth-child(3) {
-    margin-top: -3vh; /* Reduce the margin-top for the third image */
-    margin-bottom: 0; /* Remove the margin-bottom for the last image */
+  margin-top: -3vh; /* Reduce the margin-top for the third image */
+  margin-bottom: 5rem; /* Remove the margin-bottom for the last image */
 }
 
 .image-container:nth-child(3) .cropped-image {
-    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%); /* Invert the top edge and keep the bottom edge straight */
+  height: 100vh;
+  margin-bottom: -2rem; /* Move the last image down to overlap with the footer */
+  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%); /* Invert the top edge and keep the bottom edge straight */
 }
 
 .title-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .title-image {
-    transition: transform 0.3s ease;
-    height: 30vh;
+  transition: transform 0.3s ease;
+  height: 30vh;
 }
 
 .title-image:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .subtitle {
-    font-family: 'Minecraft', sans-serif;
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-top: -20px;
-    padding-bottom: 10px;
+  font-family: 'Minecraft', sans-serif;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-top: -20px;
+  padding-bottom: 10px;
 }
 
 /* JOIN NOW BUTTON */
 
 button {
-    font-size: 18px;
-    background-color: #856600;
-    color: #fff;
-    text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    border: 0;
-    z-index: 1;
-    user-select: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    white-space: unset;
-    padding: 0.8rem 1.5rem;
-    text-decoration: none;
-    font-weight: 900;
-    transition: all 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
-  }
-  
-  button:before {
-    position: absolute;
-    pointer-events: none;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    content: "";
-    transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
-    z-index: -1;
-    background-color: #ccad00 !important;
-    box-shadow: 0 -4px rgba(108, 70, 0, 0.5) inset,
-      0 4px rgba(255, 243, 75, 0.99) inset, -4px 0 rgba(255, 225, 57, 0.5) inset,
-      4px 0 rgba(108, 92, 0, 0.5) inset;
-  }
-  
-  button:after {
-    position: absolute;
-    pointer-events: none;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    content: "";
-    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
-    transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
-  }
-  
-  button:hover {
-    transform: scale(1.1);
-  }
-  
-  button:hover:before {
-    box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset,
-      -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
-  }
-  
-  button:hover:after {
-    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
-  }
-  
-  button:active {
-    transform: scale(1.1) translateY(4px);
-  }
-  
-  button:active:after {
-    box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
-  }
+  font-size: 18px;
+  background-color: #856600;
+  color: #fff;
+  text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 0;
+  z-index: 1;
+  user-select: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: unset;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  font-weight: 900;
+  transition: all 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+}
+
+button:before {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: "";
+  transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+  z-index: -1;
+  background-color: #ccad00 !important;
+  box-shadow: 0 -4px rgba(108, 70, 0, 0.5) inset,
+    0 4px rgba(255, 243, 75, 0.99) inset, -4px 0 rgba(255, 225, 57, 0.5) inset,
+    4px 0 rgba(108, 92, 0, 0.5) inset;
+}
+
+button:after {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: "";
+  box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+  transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+button:hover:before {
+  box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset,
+    -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+button:hover:after {
+  box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+}
+
+button:active {
+  transform: scale(1.1) translateY(4px);
+}
+
+button:active:after {
+  box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
+}
 
 /* HOW TO JOIN AND STEPS */
 
+.why-join-overlay,
 .how-to-join-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.192);
-    padding: 20px;
-    border-radius: 20px;
-    backdrop-filter: blur(6px); /* Add this line to blur the background */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.192);
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px); /* Add this line to blur the background */
 }
 
+.why-join,
 .how-to-join {
-    text-align: center;
+  text-align: center;
 }
 
 .steps {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .step-image {
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    filter: drop-shadow(0 0 2px #0000008c);
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  filter: drop-shadow(0 0 2px #0000008c);
+  transition: 0.2s;
 }
 
+.step-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 1rem #0000008c;
+}
+
+.why-join p,
 .step p {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #ffffff;
-    font-family: Minecraft;
-    filter: drop-shadow(0 0 10px #000);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ffffff;
+  font-family: Minecraft;
+  filter: drop-shadow(0 0 10px #000);
 }
 
+.why-join p {
+  filter: none;
+  font-weight: 400;
+}
+
+.why-join,
 .how-to-join h2 {
-    font-family: Minecraft;
-    font-size: 2rem;
-    color: #ffffff;
-    padding-bottom: 1rem;
-    filter: drop-shadow(0 0 10px #000);
+  font-family: Minecraft;
+  font-size: 2rem;
+  color: #ffffff;
+  padding-bottom: 1rem;
+  filter: drop-shadow(0 0 10px #000);
 }
